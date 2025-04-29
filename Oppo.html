@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vivo Mobile Details</title>
+  <style>
+    
+    #mainImage {
+      width: 300px;
+      height: 500px;
+      object-fit: cover;
+      float: left;
+      margin-right: 20px;
+      border-radius: 10px;
+      transition: transform 1s ease-in-out;
+    }
+
+    .rollIn {
+      animation: rollIn 1s forwards;
+    }
+
+    @keyframes rollIn {
+      0% {
+        transform: rotateY(180deg);
+        opacity: 0;
+      }
+      100% {
+        transform: rotateY(0deg);
+        opacity: 1;
+      }
+    }
+
+    .details-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      max-width: 50%;
+    }
+
+    .details-container h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ee0000;
+    }
+
+    .details-container p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .details-container ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .details-container ul li {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .button-wrapper {
+      width: fit-content;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 10px 0;
+    }
+
+    .search-button {
+      padding: 4px 8px;
+      background-color: #0a74da;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .search-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Thumbnails container */
+    .thumbnail-container {
+      clear: both;
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    
+    .thumbnail-container img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .thumbnail-container img:hover {
+      border-color: #0a74da;
+      transform: rotate(15deg); 
+    }
+  </style>
+</head>
+<body>
+  <h1>Oppo Mobile Details</h1>
+
+  <div class="mobile-detail-section">
+    <img id="mainImage" src="/mobile 8.jpeg" alt="Oppo Mobile Image" class="rollIn"/>
+    <div class="details-container">
+      <h2>Oppo Mobile</h2>
+      <p>
+        <strong>Description:</strong> The Vivo mobile offers a perfect balance
+        of performance, design, and affordability. With cutting-edge features, it
+        is perfect for everyday use, gaming, and photography.
+      </p>
+      <ul>
+        <li><strong>Screen Type:</strong> AMOLED Display</li>
+        <li><strong>Display Size:</strong> 6.5 inches</li>
+        <li><strong>Resolution:</strong> 1080 x 2400 pixels</li>
+        <li><strong>Processor:</strong> MediaTek Helio G95</li>
+        <li><strong>RAM:</strong> 8GB</li>
+        <li><strong>Internal Storage:</strong> 128GB</li>
+        <li><strong>Battery:</strong> 4500 mAh</li>
+        <li><strong>Charger:</strong> USB Type-C, 33W Fast Charging</li>
+      </ul>
+      <p><strong>Price:</strong> $399.99</p>
+
+      <div class="button-wrapper">
+        <button class="search-button">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="thumbnail-container">
+    <img src="/mobile 3.jpeg" onclick="changeImage('/mobile 3.jpeg')" alt="Thumbnail 1">
+    <img src="/mobile 5.jpeg" onclick="changeImage('/mobile 5.jpeg')" alt="Thumbnail 2">
+  </div>
+
+  <script>
+    function changeImage(imageSrc) {
+      const mainImage = document.getElementById("mainImage");
+      mainImage.classList.remove('rollIn'); 
+      mainImage.offsetHeight; 
+      mainImage.src = imageSrc;
+      mainImage.classList.add('rollIn'); 
+    }
+  </script>
+</body>
+</html>

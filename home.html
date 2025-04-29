@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile Service</title>
+  <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+    <!-- Header -->
+  <header class="header">
+    <div class="logo-container">
+      <div class="logo">
+        <img src="/Mobile 1.jpeg" alt="Logo" />
+      </div>
+      <div class="logo-text">Mobile Service</div>
+    </div>
+    <nav class="nav-buttons">
+      <a href="./index.html">Home</a>
+      <a href="./About.html">About</a>
+      <a href="./contact us.html">Contact Us</a>
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search for a mobile..." class="search-input" />
+      <button class="search-button">Search</button>
+    </div>
+    <div class="cart-container">
+      <a href="javascript:void(0)" class="cart-icon" onclick="toggleCartPopup()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="single-image">
+    <div class="image-text-container">
+      <h1 class="image-heading">Explore Our Latest Mobile Collection</h1>
+      <p class="image-description">We provide the best mobile phones with the latest technology to meet all your needs.</p>
+    </div>
+    <video src="/mobile video1.mp4" autoplay loop muted playsinline style="width: 2000px; height: 670px; padding-bottom: 20px;  pointer-events: none;">
+      Your browser does not support the video tag.
+    </video>
+    
+    <img src="/new 2.jpg" alt="Mobile" class="image" />
+  </section>
+
+  <section class="mobile-gallery">
+    <div class="gallery-heading">
+      <h2>Explore Our Mobile Collection</h2>
+    </div>
+    <div class="mobile-card">
+      <img src="/mobile 6.jpeg" alt="Vivo" />
+      <h1>Vivo</h1>
+      <p>Latest smartphone with powerful features and sleek design.</p>
+      <p class="price">$499.99</p>
+      <a href="./Vivo Page.html"><button>View Details</button></a>
+      <button class="add-cart" data-product="Vivo" data-price="499.99">Add Cart</button>
+    </div>
+    <div class="mobile-card">
+      <img src="/mobile 7.jpeg" alt="Oppo" />
+      <h1>Oppo</h1>
+      <p>Affordable and reliable mobile for everyday use.</p>
+      <p class="price">$399.99</p>
+      <a href="./Oppo.html"><button>View Details</button></a>
+      <button class="add-cart" data-product="Oppo" data-price="399.99">Add Cart</button>
+    </div>
+    <div class="mobile-card">
+      <img src="/mobile 8.jpeg" alt="Samsung" />
+      <h1>Samsung</h1>
+      <p>High-performance phone with long-lasting battery.</p>
+      <p class="price">$599.99</p>
+      <a href="./Samsung.html"><button>View Details</button></a>
+      <button class="add-cart" data-product="Samsung" data-price="599.99">Add Cart</button>
+    </div>
+  </section>
+
+  <section class="mobile-gallery">
+    <div class="gallery-heading">
+      <h2>Explore Our Mobile Spare Parts</h2>
+    </div>
+    <div class="mobile-card">
+      <img src="/Mobile screen.png" alt="Screen" />
+      <h1>Mobile Screen</h1>
+      <p>High-resolution replacement screens for all models.</p>
+      <p class="price">$99.99</p>
+      <button class="add-cart" data-product="Mobile Screen" data-price="99.99">Add Cart</button>
+    </div>
+    <div class="mobile-card">
+      <img src="/sim scoket.jpeg" alt="Sim Socket" />
+      <h1>Sim Socket</h1>
+      <p>Compatible with most Android and iPhone models.</p>
+      <p class="price">$19.99</p>
+      <button class="add-cart" data-product="Sim Socket" data-price="19.99">Add Cart</button>
+    </div>
+    <div class="mobile-card">
+      <img src="/Battery.jpeg" alt="Battery" />
+      <h1>Battery</h1>
+      <p>Long-lasting batteries for all your devices.</p>
+      <p class="price">$49.99</p>
+      <button class="add-cart" data-product="Battery" data-price="49.99">Add Cart</button>
+    </div>
+  </section>
+
+  <section class="mobile-details">
+    <h2>About Our Mobiles</h2>
+    <p>We offer the latest smartphones with cutting-edge features, premium quality, and competitive prices.</p>
+    <p>Whether you are looking for a camera-focused device or a performance-oriented mobile, we have something for everyone.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-address">
+        <h3>Our Address</h3>
+        <p>1234 Mobile Street, Tech City, State, 12345</p>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@mobileservice.com</p>
+        <p>Phone: +1 800 123 4567</p>
+      </div>
+    </div>
+    <p>&copy; 2025 Mobile Service. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Toast popup -->
+  <div class="toast" id="toast">✅ Product added to cart!</div>
+
+  <!-- Cart popup -->
+  <!-- Cart Icon -->
+<button class="cart-icon" onclick="toggleCartPopup()">Cart (<span id="cart-count">0</span>)</button>
+
+<!-- Cart Popup -->
+<div class="cart-popup" id="cart-popup">
+    <span class="close-btn" onclick="toggleCartPopup()">X</span>
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    
+    <button class="checkout-btn" onclick="checkout()">Order Confirmation</button>
+  
+    <!-- Checkout Form (Hidden by default) -->
+    <form id="checkout-form" style="display: none;">
+        <center><h3 style="color: green;">Fill Details</h3><br></center>
+        <label for="name">Name :</label>
+        <input type="text" id="name" placeholder="Your Name" required><br>
+        
+        <label for="email">Email :</label>
+        <input type="text" id="email" placeholder="Your Email" required><br>
+        
+        <label for="orderDetails">Product Name :</label>
+        <input type="text" id="orderDetails" placeholder="Order Details" required><br><br>
+        
+        <center><button type="submit">Checkout</button></center>
+    </form>
+</div>
+
+  
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="./mobile.js"></script>
+</body>
+</html>

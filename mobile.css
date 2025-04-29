@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.header {
+  background-color: #000;
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+.logo img:hover {
+  animation: rotateLogo 1s ease-in-out;
+}
+
+.logo-text {
+  margin-left: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-buttons a {
+  background-color: #add8e6;
+  color: #000;
+  margin-left: 15px;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-buttons a:hover {
+  background-color: #87ceeb;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px 14px;
+  background-color: #0a74da;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.cart-container {
+  margin-left: 20px;
+  position: relative;
+}
+
+.cart-icon {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.cart-icon:hover {
+  color: #0a74da;
+}
+
+#cart-count {
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+.single-image {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.image-text-container {
+  position: absolute;
+  z-index: 1;
+  color: rgb(255, 217, 0);
+  padding: 20px;
+  max-width: 700px;
+}
+
+.image-heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.image-description {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.mobile-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+  flex-wrap: wrap;
+}
+
+.gallery-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.mobile-card {
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.mobile-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.mobile-card h1 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.mobile-card p {
+  margin: 10px 0;
+}
+
+.mobile-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0a74da;
+}
+
+.mobile-card button {
+  margin-top: 8px;
+  padding: 10px 20px;
+  background-color: #0a74da;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mobile-card button:hover {
+  background-color: black;
+}
+
+.mobile-details {
+  background-color: #f1f1f1;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #28a745;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
