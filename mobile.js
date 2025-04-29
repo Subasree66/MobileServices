@@ -137,7 +137,7 @@ document.getElementById("checkout-form").addEventListener("submit", function(e) 
     orderDetails: document.getElementById("orderDetails").value
   };
  
-  fetch("https://mobileservices-snzc.onrender.com/send-email", {
+  fetch("https://backendmobile-i00z.onrender.com/send-email", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
