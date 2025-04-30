@@ -111,45 +111,188 @@ body {
   right: -8px;
 }
 
+/* General reset for styling */
 .single-image {
   width: 100%;
-  height: 100vh;
+  height: 90vh; /* Adjusted height */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 80px;
+  overflow: hidden;
+  background-color: #f9f9f9; /* Light background for contrast */
 }
 
+/* Container for text */
 .image-text-container {
   position: absolute;
   z-index: 1;
-  color: rgb(255, 153, 0);
-  padding: 20px;
-  max-width: 1000px;
+  color: white;
+  padding: 30px;
+  max-width: 900px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background to improve readability */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
+/* Heading */
 .image-heading {
-  font-size: 40px;
+  font-size: 45px; /* Larger font size */
   font-weight: bold;
-  color: #0a0eec;
+  color: white;
+  margin-bottom: 15px;
+  line-height: 1.4;
 }
 
+/* Description Text */
 .image-description {
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 20px;
 }
 
-.image {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+/* Image Container */
+/* Section */
+.single-image {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 80px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Video Background */
+.video-container {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  pointer-events: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text Container */
+.image-text-container {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+  max-width: 900px;
+  text-align: center;
+  background: rgba(110, 30, 214, 0.1); /* Very light glass effect base */
+  backdrop-filter: blur(10px); /* Glass blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(29, 48, 224, 0.2); /* Thin frosted border */
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Deeper shadow for floating look */
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+
+/* Heading */
+.image-heading {
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: fadeInHeading 1.5s ease-out forwards;
+}
+
+.highlight {
+  color: #4684b6; /* Professional blue */
+}
+
+/* Description */
+.image-description {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInDescription 2s ease-out forwards;
+}
+
+/* Button */
+.cta-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #2196F3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  animation: fadeInButton 2.2s ease-out forwards;
+}
+
+.cta-button:hover {
+  background-color: #454647;
+}
+
+/* Animations */
+@keyframes fadeInHeading {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDescription {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInButton {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .image-heading {
+    font-size: 32px;
+  }
+
+  .image-description {
+    font-size: 18px;
+  }
+
+  .single-image {
+    height: 80vh;
+  }
+
+  .video-background {
+    object-fit: contain;
+  }
 }
 
 .mobile-gallery {
